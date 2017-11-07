@@ -30,6 +30,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print(info)
         
+        cameraButton.isEnabled = false
+        SVProgressHUD.show()
+        
         if let imageSelected = info[UIImagePickerControllerOriginalImage] as? UIImage{
             imageView.image = imageSelected
             picker.dismiss(animated: true, completion: nil)
@@ -51,7 +54,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 for index in 1..<classes.count{
                     self.classificationResults.append(classes[index].classification)
                 }
-                print(self.classificationResults)
+                //print(self.classificationResults)
+                SVProgressHUD.dismiss()
+                DispatchQueue.main.async {
+                    self.cameraButton.isEnabled = true
+                }
+                
                 if self.classificationResults.contains("hotdog"){
                     DispatchQueue.main.async {
                         self.navigationItem.title = "Hotdog!"
