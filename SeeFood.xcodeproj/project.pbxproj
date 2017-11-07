@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C47743361FB12CB400BBE68F /* VisualRecognitionV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47743341FB12CB400BBE68F /* VisualRecognitionV3.framework */; };
+		C47743371FB12CB400BBE68F /* VisualRecognitionV3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C47743341FB12CB400BBE68F /* VisualRecognitionV3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C47743381FB12CB400BBE68F /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47743351FB12CB400BBE68F /* SVProgressHUD.framework */; };
+		C47743391FB12CB400BBE68F /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C47743351FB12CB400BBE68F /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4BADDF41FB11FCA0057379D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BADDF31FB11FCA0057379D /* AppDelegate.swift */; };
 		C4BADDF61FB11FCA0057379D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BADDF51FB11FCA0057379D /* ViewController.swift */; };
 		C4BADDF91FB11FCA0057379D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BADDF71FB11FCA0057379D /* Main.storyboard */; };
@@ -14,7 +18,24 @@
 		C4BADDFE1FB11FCA0057379D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BADDFC1FB11FCA0057379D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C477433A1FB12CB400BBE68F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C47743391FB12CB400BBE68F /* SVProgressHUD.framework in Embed Frameworks */,
+				C47743371FB12CB400BBE68F /* VisualRecognitionV3.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C47743341FB12CB400BBE68F /* VisualRecognitionV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualRecognitionV3.framework; path = Carthage/Build/iOS/VisualRecognitionV3.framework; sourceTree = "<group>"; };
+		C47743351FB12CB400BBE68F /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		C4BADDF01FB11FCA0057379D /* SeeFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4BADDF31FB11FCA0057379D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4BADDF51FB11FCA0057379D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C47743381FB12CB400BBE68F /* SVProgressHUD.framework in Frameworks */,
+				C47743361FB12CB400BBE68F /* VisualRecognitionV3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +61,8 @@
 		C4BADDE71FB11FCA0057379D = {
 			isa = PBXGroup;
 			children = (
+				C47743351FB12CB400BBE68F /* SVProgressHUD.framework */,
+				C47743341FB12CB400BBE68F /* VisualRecognitionV3.framework */,
 				C4BADDF21FB11FCA0057379D /* SeeFood */,
 				C4BADDF11FB11FCA0057379D /* Products */,
 			);
@@ -74,6 +99,7 @@
 				C4BADDEC1FB11FCA0057379D /* Sources */,
 				C4BADDED1FB11FCA0057379D /* Frameworks */,
 				C4BADDEE1FB11FCA0057379D /* Resources */,
+				C477433A1FB12CB400BBE68F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -276,6 +302,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9KW43L75ER;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SeeFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.suniel.SeeFood;
@@ -291,6 +321,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9KW43L75ER;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SeeFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.suniel.SeeFood;
