@@ -18,8 +18,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
-    
-    let imagePicker = UIImagePickerController()
+	@IBOutlet weak var hotornotImage: UIImageView!
+	@IBOutlet weak var shareButton: UIButton!
+	
+	let imagePicker = UIImagePickerController()
     var classificationResults: [String] = [String]()
     
     override func viewDidLoad() {
@@ -54,19 +56,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 for index in 1..<classes.count{
                     self.classificationResults.append(classes[index].classification)
                 }
-                //print(self.classificationResults)
+				
+				//print(self.classificationResults)
+				
                 SVProgressHUD.dismiss()
                 DispatchQueue.main.async {
                     self.cameraButton.isEnabled = true
                 }
                 
-                if self.classificationResults.contains("hotdog"){
+                if self.classificationResults.contains("pasta"){
                     DispatchQueue.main.async {
-                        self.navigationItem.title = "Hotdog!"
+						self.navigationController?.navigationBar.barTintColor = UIColor(red:0.57, green:0.86, blue:0.35, alpha:1.0)
+						self.navigationController?.navigationBar.tintColor = UIColor.white
+						self.hotornotImage.image = UIImage(named: "checked")
+                        self.navigationItem.title = "Pasta!"
+						self.navigationController?.navigationBar.isTranslucent = false
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self.navigationItem.title = "Not Hotdog!"
+						self.navigationController?.navigationBar.barTintColor = UIColor(red:0.85, green:0.00, blue:0.15, alpha:1.0)
+						self.navigationController?.navigationBar.tintColor = UIColor.white
+						self.hotornotImage.image = UIImage(named: "cancel")
+                        self.navigationItem.title = "Not Pasta!"
+						self.navigationController?.navigationBar.isTranslucent = false 
                     }
                 }
                 
@@ -79,12 +91,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
-        print("Open up my camera.")
+        //print("Open up my camera.")
         imagePicker.sourceType = .savedPhotosAlbum
         imagePicker.allowsEditing = false
         present(imagePicker, animated: true, completion: nil)
     }
     
-
+	@IBAction func shareTapped(_ sender: UIButton) {
+		print("Share now")
+	}
+	
 }
 
