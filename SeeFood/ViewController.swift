@@ -13,7 +13,7 @@ import SVProgressHUD
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // Please Use your own api key
-    let apiKey = "8797fe26f2deefa46303df2eb02f21ca3f4720e1"
+    let apiKey = ""
     let version = "2017-11-07"
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
